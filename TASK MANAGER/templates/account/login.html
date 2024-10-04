@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container mt-5">
+    <h2 class="text-center">Login</h2>
+    <div class="col d-flex justify-content-center ">
+        <div class="card col-sm-4 align-item-center">
+            <div class="card-body">
+                <form action="{% url 'login_user' %}" method="post">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+                    </div>
+                    <button class="btn btn-secondary" type="submit">Login</button>
+                </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
